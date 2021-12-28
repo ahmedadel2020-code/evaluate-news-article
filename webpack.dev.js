@@ -1,17 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
-
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
     stats: 'minimal',
-    // output: {
-    //     libraryTarget: 'var',
-    //     library: 'Client'
-    // },
     module: {
         rules: [
             {
@@ -22,13 +17,6 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]',
-                }
             }
         ]
     },
@@ -43,5 +31,6 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
+        new WorkboxPlugin.GenerateSW()
     ]
 }

@@ -1,5 +1,7 @@
 import checkURL from "./checkURL"
 
+// this function will get that data and if something wrong happened will output error message
+
 const postData = async (url = "", data = { url: ''}) => {
     try {
         const response = await fetch(url, {
@@ -17,7 +19,13 @@ const postData = async (url = "", data = { url: ''}) => {
     }
 }
 
-
+/* 
+    - this function first will preventDefault
+    - get the url from user input
+    - check if user provided url or not by calling checkURL function
+    - provide the route and the url
+    - set the data for each element 
+*/
 const handleSubmit = async(e) => {
     e.preventDefault();
     const url = document.getElementById('article-url').value
