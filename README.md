@@ -1,4 +1,4 @@
-# Would you rather
+# Evaluate News article
 
 ## Overview
 - this app will ask you to provide any URL of an article and make analysis to the article
