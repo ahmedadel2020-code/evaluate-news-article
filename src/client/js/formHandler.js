@@ -1,6 +1,5 @@
 import checkURL from "./checkURL"
 
-
 const postData = async (url = "", data = { url: ''}) => {
     try {
         const response = await fetch(url, {
