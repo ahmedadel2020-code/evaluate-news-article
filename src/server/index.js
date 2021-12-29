@@ -23,8 +23,8 @@ app.use(express.static('dist'))
 
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile('dist/index.html')
+    // res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
 /* 
